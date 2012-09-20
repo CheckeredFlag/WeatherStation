@@ -197,7 +197,7 @@
     var raw = obj.text;
     if (debug >= 4) { alert('raw: ' + raw); }
     // chew on the response to get the image url
-    var searchString = '<div class="map-large" style="background-image:url\\(\'(\\S+\\.gif)';
+    var searchString = 'class="map-large"[^>]+style="background-image:url\\(\'(\\S+\\.gif)';
     var matches = raw.match(new RegExp(searchString));
     if (matches != null) {
       urlRegRadar = matches[1];
